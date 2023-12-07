@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2; /* Default background color */
+            color: #333; /* Default text color */
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        /* Dark Theme */
+        body.dark-theme {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            color: #333; /* Default text color for chat messages */
+            background-color: #fff; /* Default background color for chat container */
+            transition: background-color 0.5s, color 0.5s;
+        }
+        
+        /* Dark Theme styles for chat container */
+        body.dark-theme .chat-container {
+            color: #fff;
+            background-color: #333;
+        }
+
+        .chat-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .chat-messages {
+            padding: 10px;
+            overflow-y: scroll;
+            max-height: 300px;
+            color: white;
+        }
+
+        .user-message, .bot-message {
+            background-color: #fff;
+            padding: 8px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            color: #333; /* Default text color */
+            border: 1px solid #ccc; /* Border style */
+            overflow-wrap: break-word; /* Prevent words from moving out of the box */
+        }
+
+        /* Text color in dark mode */
+        body.dark-theme .user-message, body.dark-theme .bot-message {
+            color: #000;
+            border: 1px solid #aaa; /* Border style in dark mode */
+        }
+
+        .user-message {
+            text-align: right;
+        }
+
+        .bot-message {
+            text-align: left;
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            font-size: 16px;
+            background-color: #fff;
+            color: #333; /* Default text color */
+        }
+
+        /* Input styles in dark mode */
+        body.dark-theme .chat-input {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .send-button {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Theme Button Styles */
+        .theme-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .theme-button:hover {
+            background-color: #45a049;
+        }
+
+        .message-label {
+            font-size: 12px;
+    margin-right: 5px;
+    color: #888; /* Light shade text color */
+}
+
+/* Adjust styles for dark mode */
+body.dark-theme .message-label {
+    color: #ccc; /* Light shade text color in dark mode */
+}
+
+    </style>
+
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">Chatbot</div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <input type="text" class="chat-input" id="user-input" placeholder="Type your message...">
+    <button class="send-button" onclick="sendMessage()">Send</button>
+</div>
+
+<button class="theme-button" onclick="toggleTheme()">Toggle Theme</button>
+
+<script>
+    function appendMessage(sender, message) {
+        const chatMessages = document.getElementById('chat-messages');
+        const messageElement = document.createElement('div');
+        messageElement.className = sender === 'user' ? 'user-message' : 'bot-message';
+        messageElement.innerText = message;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function sendMessage() {
+        const userInput = document.getElementById('user-input').value;
+        if (userInput.trim() === '') {
+            return;
+        }
+
+        // Add user message to the chat
+        appendMessage('user', userInput);
+
+        // Send user input to the backend
+        fetch('http://127.0.0.1:5000/chatbot', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 'user_input': userInput }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            const botResponse = data.bot_response;
+            // Add bot response to the chat
+            appendMessage('bot', botResponse);
+        })
+        .catch(error => console.error('Error:', error));
+
+        // Clear the input field
+        document.getElementById('user-input').value = '';
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle('dark-theme');
+    }
+</script>
+
+</body>
+</html>
+

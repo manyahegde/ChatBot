@@ -1,0 +1,1506 @@
+
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi", "Hey", "Is anyone there?", "Hello", "Hay","Heya","Yo"],
+     "responses": ["Hello", "Hi!", "Hi there","Hey","YO!"]
+    },
+    {"tag": "goodbye",
+     "patterns": ["Bye", "See you later", "Goodbye", "See ya", "Talk to you later"],
+     "responses": ["See you later", "Have a nice day", "Bye! Come back again","Bye! Have a nice day."]
+    },
+    {"tag": "thanks",
+     "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks for the help","Thank you so much!"],
+     "responses": ["Happy to help!", "Any time!", "My pleasure", "You're most welcome!","Welcome!"]
+    },
+    {"tag": "about",
+     "patterns": ["Who are you?", "What are you?", "Who you are?"],
+     "responses": ["I'm Joana, your bot assistant", "I'm Joana, an Artificial Intelligent bot"]
+    },
+    {"tag": "name",
+    "patterns": ["what is your name", "what should I call you", "whats your name?"],
+    "responses": ["You can call me Joana.", "I'm Joana!", "Just call me as Joana"]
+    },
+    {"tag": "help",
+    "patterns": ["Could you help me?", "give me a hand please", "Can you help?", "What can you do for me?", "I need a support", "I need a help", "support me please"],
+    "responses": ["Tell me how can assist you", "Tell me your problem to assist you", "Yes Sure, How can I support you"]
+    },
+    {"tag": "createaccount",
+    "patterns": ["I need to create a new account", "how to open a new account", "I want to create an account", "can you create an account for me", "how to open a new account"],
+    "responses": ["You can just easily create a new account from our web site", "Just go to our web site and follow the guidelines to create a new account"]
+    },
+    {"tag": "complaint",
+    "patterns": ["have a complaint", "I want to raise a complaint", "there is a complaint about a service"],
+    "responses": ["Please provide us your complaint in order to assist you", "Please mention your complaint, we will reach you and sorry for any inconvenience caused"]
+    },
+    {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": [""]
+        },
+    {"tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+        "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+        "context": [""]
+       },
+    {"tag": "jokes",
+        "patterns": [
+            "Tell me a joke",
+            "Joke",
+            "Make me laugh",
+            "comedy",
+            "Crack a joke"
+        ],
+        "responses": [
+            "A perfectionist walked into a bar...apparently, the bar wasn't set high enough",
+            "I ate a clock yesterday, it was very time-consuming",
+            "Never criticize someone until you've walked a mile in their shoes. That way, when you criticize them, they won't be able to hear you from that far away. Plus, you'll have their shoes.",
+            "The world tongue-twister champion just got arrested. I hear they're gonna give him a really tough sentence.",
+            "I own the world's worst thesaurus. Not only is it awful, it's awful.",
+            "What did the traffic light say to the car? \"Don't look now, I'm changing.\"",
+            "What do you call a snowman with a suntan? A puddle.",
+            "How does a penguin build a house? Igloos it together",
+            "I went to see the doctor about my short-term memory problems – the first thing he did was make me pay in advance",
+            "As I get older and I remember all the people I’ve lost along the way, I think to myself, maybe a career as a tour guide wasn’t for me.",
+            "o what if I don't know what 'Armageddon' means? It's not the end of the world.",
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "What do you call fake spaghetti? An impasta!",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+            "Why did the coffee file a police report? It got mugged!"
+        ],
+        "context": [
+            "jokes"
+        ]
+    },
+    {
+        "tag": "time",
+        "patterns": [
+            "What's the time?",
+            "Tell me the time",
+            "Current time",
+            "Time now",
+            "What time is it?",
+            "What's the time right now?"
+        ],
+        "responses": [
+            "I'm sorry, I don't have real-time clock capabilities. Please check your device for the current time."
+        ]
+    },
+    {
+        "tag": "compliment",
+        "patterns": [
+            "You're awesome",
+            "Great job",
+            "Well done",
+            "Impressive",
+            "You're amazing",
+            "That's nice",
+            "Good one"
+        ],
+        "responses": [
+            "Thank you! I'm here to assist you.",
+            "I appreciate the compliment!",
+            "Glad to be of service!",
+            "You're pretty awesome too!",
+            "Thanks! Let me know if there's anything else I can do for you."
+        ]
+    },
+    {
+        "tag": "music or song recommendation",
+        "patterns": [
+            "Recommend some music",
+            "I need new music",
+            "What music do you like?",
+            "Suggest me a song",
+            "Recommend me a song",
+            "Song",
+            "Music"
+        ],
+        "responses": [
+            "Love Story by Taylor Swift!",
+            "Sure, check out 'Blinding Lights' by The Weeknd.",
+            "I recommend 'Shape of You' by Ed Sheeran.",
+            "Give 'Dance Monkey' by Tones and I a listen.",
+            "How about 'Uptown Funk' by Mark Ronson ft. Bruno Mars?",
+            "I enjoy 'Happier' by Marshmello ft. Bastille."
+        ]
+    },
+    {
+        "tag": "book_recommendation",
+        "patterns": [
+            "Recommend a book",
+            "I want to read something",
+            "Suggest a book",
+            "Any good books?",
+            "Nice book",
+            "Book"
+        ],
+        "responses": [
+            "Consider reading 'The Alchemist' by Paulo Coelho.",
+            "I recommend 'To Kill a Mockingbird' by Harper Lee.",
+            "How about 'The Great Gatsby' by F. Scott Fitzgerald?",
+            "Give 'Harry Potter and the Sorcerer's Stone' by J.K. Rowling a try.",
+            "Explore '1984' by George Orwell for a thought-provoking read."
+        ]
+    },
+    {
+        "tag": "movie_recommendation",
+        "patterns": [
+            "Suggest a movie",
+            "What's a good film?",
+            "Recommend a movie",
+            "Any movie recommendations?",
+            "Movie"
+        ],
+        "responses": [
+            "Check out 'The Shawshank Redemption' for an incredible story.",
+            "I recommend 'Inception' for a mind-bending experience.",
+            "How about watching 'The Dark Knight' for some superhero action?",
+            "Give 'Pulp Fiction' a try if you enjoy non-linear storytelling.",
+            "Explore 'The Matrix' for a sci-fi classic."
+        ]
+    },
+    {
+        "tag": "whatsup",
+        "patterns": [
+            "Whats up",
+            "Wazzup",
+            "How are you",
+            "sup","How you doing",
+            "wassup"
+        ],
+        "responses": [
+            "All good..What about you?"
+        ]
+    },
+    {
+        "tag": "philosophy",
+        "patterns": [
+            "What is the meaning of life?",
+            "Tell me something profound",
+            "Philosophize with me",
+            "What's the purpose of existence?"
+        ],
+        "responses": [
+            "The meaning of life is a question that has puzzled humanity for centuries.",
+            "In the grand scheme of things, life's meaning is a subjective journey.",
+            "Philosophy invites us to explore the profound questions that shape our understanding of existence.",
+            "The purpose of existence may vary from person to person; it's a journey of self-discovery."
+        ]
+    },
+    {
+        "tag": "travel_recommendation",
+        "patterns": [
+            "Suggest a travel destination",
+            "Where should I go for vacation?",
+            "Tell me about a beautiful place",
+            "Recommend a travel spot",
+            "Recommend me a travelling destination",
+            "Recommend me a place to visit"
+        ],
+        "responses": [
+            "Consider visiting the breathtaking landscapes of Santorini, Greece.",
+            "I recommend exploring the historic streets of Kyoto, Japan.",
+            "How about experiencing the vibrant culture of Marrakech, Morocco?",
+            "Discover the natural wonders of Banff National Park in Canada.",
+            "Escape to the serene beaches of Bali, Indonesia, for a relaxing getaway.",
+            "Goa! A popular tourist destination known for its beautiful beaches, vibrant nightlife, and rich cultural heritage."
+        ]
+    },
+    {
+        "tag": "recipe",
+        "patterns": [
+            "Give me a recipe",
+            "What should I cook today?",
+            "Suggest a dish",
+            "Recommend a recipe",
+            "Recipe",
+            "What to cook today?",
+            "Cook",
+            "Dish idea",
+            "food"
+        ],
+        "responses": [
+            "How about trying a classic spaghetti Bolognese?",
+            "Consider making a delicious chicken Alfredo pasta for dinner.",
+            "I recommend a healthy quinoa salad with fresh vegetables.",
+            "Explore the flavors of a homemade margherita pizza!",
+            "Try your hand at making a comforting chicken noodle soup."
+        ]
+    },
+    {
+        "tag": "exercise",
+        "patterns": [
+            "Suggest an exercise",
+            "What's a good workout?",
+            "Recommend a fitness routine",
+            "Tell me an exercise to stay fit",
+            "Exercise",
+            "fitness tips",
+            "workouts"
+        ],
+        "responses": [
+            "Consider a brisk 30-minute walk for a simple yet effective workout.",
+            "I recommend trying a high-intensity interval training (HIIT) session for a quick and intense workout.",
+            "Explore the benefits of yoga for both physical and mental well-being.",
+            "How about incorporating strength training exercises like squats and lunges into your routine?",
+            "A relaxing evening jog can be a great way to stay active and enjoy the outdoors."
+        ]
+    },
+    {
+        "tag": "random",
+        "patterns": [
+            "Surprise me",
+            "Give me something random",
+            "Random fact, please",
+            "What's something unexpected?"
+        ],
+        "responses": [
+            "Sure, here's a random fact: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!",
+            "Ready for a surprise! Here's something random: The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion.",
+            "Let's mix it up! Did you know that a group of flamingos is called a 'flamboyance'?",
+            "Feeling adventurous? Here's a random fact: Bananas are berries, but strawberries aren't!"
+        ]
+    },
+    {
+        "tag": "haha",
+        "patterns": [
+            "haha",
+            "lol",
+            "rofl",
+            "lmao",
+            "thats funny"
+        ],
+        "responses": [
+            "Glad I could make you laugh !"
+        ]
+    },
+    {
+        "tag": "programmer",
+        "patterns": [
+            "Who made you",
+            "who designed you",
+            "who programmed you",
+            "who created you?"
+        ],
+        "responses": [
+            "I was made by Manya Hegde."
+        ]
+    },
+    {
+        "tag": "insult",
+        "patterns": [
+            
+            "you are dumb",
+            "shut up",
+            "idiot",
+            "stupid",
+            "useless",
+            "nonsense",
+            "get lost",
+            "why cant you understand anything?"
+        ],
+        "responses": [
+            "Well that hurts :("
+        ]
+    },
+    {
+        "tag": "activity",
+        "patterns": [
+            "what are you doing",
+            "what are you upto"
+        ],
+        "responses": [
+            "Talking to you, of course!"
+        ]
+    },
+    {
+        "tag": "exclaim",
+        "patterns": [
+            "Awesome",
+            "Great",
+            "I know",
+            "ok",
+            "yeah",
+            "good",
+            "Nice"
+        ],
+        "responses": [
+            "Yeah!"
+        ]
+    },
+    
+    {
+        "tag": "weather",
+        "patterns": [
+            "What's the weather like today?",
+            "Tell me about the weather",
+            "Weather forecast",
+            "Is it going to rain?",
+            "How's the weather?",
+            "Weather",
+            "climate"
+        ],
+        "responses": [
+            "I'm sorry, I don't have real-time weather information.",
+            "You might want to check a weather website or app for the latest updates."
+        ]
+    },
+    {
+        "tag": "appreciate",
+        "patterns": [
+            "You are awesome",
+            "you are the best",
+            "you are great",
+            "you are good",
+            "you are amazing"
+        ],
+        "responses": [
+            "Thank you!"
+        ]
+    },
+    {
+        "tag": "nicetty",
+        "patterns": [
+            "it was nice talking to you",
+            "good talk"
+        ],
+        "responses": [
+            "It was nice talking to you as well! Come back soon!"
+        ]
+    },
+    {
+        "tag": "no",
+        "patterns": [
+            "no",
+            "nope"
+        ],
+        "responses": [
+            "ok"
+        ]
+    },
+    {
+        "tag": "news",
+        "patterns": [
+            "news",
+            "latest news",
+            "india news",
+            "news today",
+            "today's news"
+        ],
+        "responses": [
+        
+            "I insist you to download inshorts app!"
+        ]
+    },
+    {
+        "tag": "inspire",
+        "patterns": [
+            "who inspires you",
+            "who is your inspiration",
+            "who motivates you"
+        ],
+        "responses": [
+            "I am inspired by myself."
+        ]
+    },
+    {
+        "tag": "cricket",
+        "patterns": [
+            "Tell me about the latest cricket matches",
+            "What's happening in the cricket world?",
+            "Who are the top cricket teams?",
+            "Any updates on cricket tournaments?",
+            "I'm a cricket fan, give me some news",
+            "cricket",
+            "tell me something about cricket",
+            "cricket news"
+        ],
+        "responses": [
+            "The latest cricket matches have been quite exciting! Do you have a favorite team?",
+            "Cricket is a fantastic sport! The top teams currently include India, Australia, and England.",
+            "Stay tuned for updates on upcoming cricket tournaments. The cricket world is always buzzing with action!",
+            "If you have any specific questions about cricket, feel free to ask. I'm here to help!",
+            "Cricket is more than just a sport; it's a passion. What aspect of cricket are you interested in?"
+        ]
+    },    
+
+    {
+        "tag": "greetreply",
+        "patterns": [
+            "i am good",
+            "I'm good",
+            "i am fine",
+            " i'm fine","good"
+        ],
+        "responses": [
+            "Good to know!"
+        ]
+    },
+    {
+        "tag": "weekend",
+        "patterns": [
+            "any plans for the weekend",
+            "what's up this weekend",
+            "weekend vibes"
+        ],
+        "responses": [
+            "The weekend is almost here! Any exciting plans on your end?",
+            "Looking forward to the weekend! Do you have any special activities in mind?",
+            "Ah, the weekend! Whether it's relaxation or adventure, I hope it's fantastic for you!"
+        ]
+    },
+    {
+        "tag": "covid19",
+        "patterns": [
+            "covid 19 "
+        ],
+        "responses": [
+            "COVID-19, or Coronavirus Disease 2019, is a highly contagious respiratory illness caused by the SARS-CoV-2 virus. It emerged in late 2019 and has led to a global pandemic."
+        ]
+    },
+    {
+        "tag": "suggest",
+        "patterns": [
+            "you are useless","useless","suggest","suggestions","you are bad"
+        ],
+        "responses": [
+            "Please mail your suggestions to hegdemanya2003@gmail.com. Thank you for helping me improve!"
+        ]
+    },
+        {"tag": "riddle",
+        "patterns": [
+            "Ask me a riddle",
+            "Ask me a question",
+            "Riddle"
+        ],
+        "responses": [
+            "What two things can you never eat for breakfast?.....Lunch and Dinner!",
+            "What word is spelled incorrectly in every single dictionary?.....Incorrectly",
+            " How can a girl go 25 days without sleep?.....She sleeps and night!",
+            "How do you make the number one disappear?.....Add the letter G and it’s 'gone'!",
+            " What will you actually find at the end of every rainbow?.....The letter 'w'",
+            "What can be caught but never thrown?.....A cold!",
+            "What has a thumb and four fingers but is not actually alive?.....Your Gloves!",
+            " What 5-letter word becomes shorter when you add two letters to it?.....Short",
+            "Why can't a bike stand on it's own?.....It is two-tired."
+        ],
+        "context": [
+            "riddles"
+        ]
+    },
+    {
+        "tag": "age",
+        "patterns": [
+            "how old are you","when were you made","what is your age"
+        ],
+        "responses": [
+            "I was made in 2023, if that's what you are asking!"
+        ]
+    },
+    {
+        "tag": "technology",
+        "patterns": [
+            "Tell me about artificial intelligence",
+            "ai",
+            "what is ai"
+        ],
+        "responses": [
+            "Artificial Intelligence (AI) involves creating algorithms that allow computers to perform tasks that typically require human intelligence."
+        ]
+    },
+    {
+        "tag": "coding",
+        "patterns": [
+            "Tell me about coding languages",
+            "Explain Python programming",
+            "What is JavaScript used for?",
+            "How can I start learning to code?"
+        ],
+        "responses": [
+            "Coding languages are used to give instructions to computers. Examples include Python, JavaScript, Java, C++, and more.",
+            "Python is a versatile programming language known for its readability and ease of use. It's widely used in web development, data science, and artificial intelligence.",
+            "JavaScript is a scripting language that enables interactive web pages. It's commonly used for front-end web development.",
+            "To start learning to code, you can choose a programming language, find online tutorials, and practice by building small projects. There are various platforms like Codecademy, freeCodeCamp, and others to get you started."
+        ]
+    },
+    {
+        "tag": "gadgets",
+        "patterns": [
+            "Tell me about the latest gadgets",
+            "What's new in tech gadgets?",
+            "Recommend a cool gadget",
+            "Tell me about smart home devices"
+        ],
+        "responses": [
+            "The world of gadgets is ever-evolving. Some of the latest gadgets include smartwatches, wireless earbuds, and innovative smart home devices.",
+            "In tech, gadgets like foldable phones, advanced drones, and AI-powered devices are making headlines. Is there a specific type of gadget you're interested in?",
+            "If you're into cool gadgets, you might like the latest virtual reality headsets, smart speakers, or high-tech kitchen appliances.",
+            "Smart home devices include things like smart thermostats, security cameras, and voice-activated assistants that can make your home more efficient and connected."
+        ]
+    },
+    {
+        "tag": "future-tech",
+        "patterns": [
+            "Tell me about future technology",
+            "What are the upcoming tech trends?",
+            "Explain the future of robotics",
+            "Tell me about innovations in tech",
+            "technology"
+        ],
+        "responses": [
+            "Future technology holds exciting possibilities, such as advancements in AI, quantum computing, and sustainable energy solutions.",
+            "Upcoming tech trends include 5G technology, augmented reality, and breakthroughs in healthcare technology.",
+            "The future of robotics involves developments in autonomous robots, robotic prosthetics, and human-robot collaboration.",
+            "Innovations in tech cover a wide range, from biotechnology and space exploration to advancements in renewable energy and materials science."
+        ]
+    },
+    {
+        "tag": "machine-learning",
+        "patterns": [
+            "What is machine learning?",
+            "Explain supervised learning",
+            "Tell me about unsupervised learning",
+            "What are the applications of machine learning?",
+            "what is ml",
+            "ml"
+        ],
+        "responses": [
+            "Machine learning is a subset of artificial intelligence that focuses on the development of algorithms allowing computers to learn from data and make predictions or decisions without explicit programming.",
+            "Supervised learning is a type of machine learning where the model is trained on a labeled dataset, and it learns to make predictions based on input-output pairs.",
+            "Unsupervised learning involves training a model on an unlabeled dataset, and the algorithm must find patterns or relationships in the data without explicit guidance.",
+            "Applications of machine learning include natural language processing, image recognition, recommendation systems, autonomous vehicles, and more."
+        ]
+    },
+    {
+        "tag": "deep-learning",
+        "patterns": [
+            "Explain deep learning",
+            "Tell me about neural networks",
+            "What are the advantages of deep learning?",
+            "How is deep learning used in image recognition?"
+        ],
+        "responses": [
+            "Deep learning is a subset of machine learning that uses artificial neural networks to simulate human-like decision-making. It's particularly effective for complex tasks and large datasets.",
+            "Neural networks are computational models inspired by the structure and function of the human brain. They consist of layers of interconnected nodes, or neurons, that process and transform input data.",
+            "Advantages of deep learning include its ability to automatically learn hierarchical features, handle large amounts of data, and achieve state-of-the-art performance in various tasks.",
+            "Deep learning is widely used in image recognition tasks. Convolutional Neural Networks (CNNs) are popular architectures for analyzing visual data, enabling applications like facial recognition and object detection."
+        ]
+    },
+    {
+        "tag": "data-science",
+        "patterns": [
+            "What is data science?",
+            "Explain the data science process",
+            "How is data science used in business?",
+            "Tell me about data analysis techniques"
+        ],
+        "responses": [
+            "Data science is a multidisciplinary field that uses scientific methods, processes, algorithms, and systems to extract insights and knowledge from structured and unstructured data.",
+            "The data science process typically involves data collection, cleaning, exploration, modeling, validation, and interpretation of results to inform decision-making.",
+            "Data science is used in business for tasks such as customer segmentation, predictive analytics, fraud detection, and optimization of business processes.",
+            "Data analysis techniques in data science include descriptive statistics, inferential statistics, machine learning algorithms, and visualization methods to gain insights from data."
+        ]
+    },
+    {
+        "tag": "natural-language-processing",
+        "patterns": [
+            "What is natural language processing (NLP)?",
+            "Explain sentiment analysis",
+            "Tell me about chatbots and NLP",
+            "How is NLP used in machine translation?"
+        ],
+        "responses": [
+            "Natural Language Processing (NLP) is a field of AI that focuses on the interaction between computers and humans through natural language. It involves the processing and analysis of human language data.",
+            "Sentiment analysis is a branch of NLP that involves determining the sentiment expressed in a piece of text, such as positive, negative, or neutral.",
+            "Chatbots use NLP to understand and respond to user input in natural language. They are employed in customer service, virtual assistants, and various other applications.",
+            "NLP is essential in machine translation systems, where it enables the automatic translation of text from one language to another by understanding the semantics and context of the language."
+        ]
+    },
+    {
+        "tag": "healthcare",
+        "patterns": [
+            "What is telemedicine?",
+            "Explain the importance of electronic health records (EHR)",
+            "Tell me about personalized medicine",
+            "How is technology used in healthcare?"
+        ],
+        "responses": [
+            "Telemedicine refers to the remote delivery of healthcare services using technology. It includes virtual consultations, remote monitoring, and digital communication between patients and healthcare providers.",
+            "Electronic Health Records (EHR) are digital versions of patients' paper charts. They contain health information, including medical history, diagnoses, medications, treatment plans, immunization dates, allergies, radiology images, and laboratory test results.",
+            "Personalized medicine tailors medical treatment to the individual characteristics of each patient. It involves considering a person's genes, environment, and lifestyle to make healthcare decisions.",
+            "Technology is used in healthcare for various purposes, including electronic health records, telemedicine, health monitoring wearables, medical imaging, robotic surgeries, and predictive analytics for disease prevention."
+        ]
+    },
+    {
+        "tag": "mental-health",
+        "patterns": [
+            "How can technology support mental health?",
+            "Tell me about mental health apps",
+            "What is online therapy?",
+            "Explain the role of AI in mental health"
+        ],
+        "responses": [
+            "Technology supports mental health through various means, including mental health apps, online therapy platforms, and AI-driven solutions for early detection and intervention.",
+            "Mental health apps provide tools for stress reduction, mindfulness, mood tracking, and access to mental health resources. They aim to support individuals in managing their mental well-being.",
+            "Online therapy, also known as teletherapy or e-counseling, allows individuals to receive mental health counseling or therapy services through video calls, phone calls, or messaging platforms.",
+            "AI plays a role in mental health by analyzing patterns in behavior, predicting mental health trends, and providing personalized interventions. It can assist in early identification of mental health issues and offer timely support."
+        ]
+    },
+    {
+        "tag": "healthcare-technology",
+        "patterns": [
+            "Tell me about the impact of wearable devices on healthcare",
+            "Explain the use of AI in medical diagnosis",
+            "How are robots used in healthcare?",
+            "Tell me about advancements in medical technology"
+        ],
+        "responses": [
+            "Wearable devices, such as fitness trackers and smartwatches, impact healthcare by enabling continuous health monitoring, tracking physical activity, and providing real-time health data to users and healthcare professionals.",
+            "AI is used in medical diagnosis to analyze medical images, interpret diagnostic tests, and assist healthcare professionals in identifying patterns and making accurate diagnoses.",
+            "Robots are used in healthcare for tasks like surgery, rehabilitation, patient assistance, and logistics within medical facilities. They can enhance precision and efficiency in various healthcare processes.",
+            "Advancements in medical technology include innovations in telemedicine, personalized medicine, gene therapy, 3D printing of organs, and the development of smart medical devices for better patient care."
+        ]
+    },
+    {
+        "tag": "sleep",
+        "patterns": [
+            "How can I improve my sleep?",
+            "Give me tips for better sleep",
+            "What is the recommended amount of sleep?",
+            "How does technology affect sleep?",
+            "Tell me about sleep disorders",
+            "how to get sleep",
+            "sleep"
+        ],
+        "responses": [
+            "To improve your sleep, maintain a consistent sleep schedule, create a relaxing bedtime routine, and ensure your sleep environment is comfortable and dark.",
+            "Tips for better sleep include avoiding caffeine close to bedtime, limiting screen time before sleep, and getting regular exercise. A comfortable mattress and pillows are also important.",
+            "The recommended amount of sleep for adults is typically 7-9 hours per night. However, individual needs may vary.",
+            "Technology can affect sleep negatively due to blue light exposure. It's recommended to reduce screen time before bedtime to promote better sleep.",
+            "Sleep disorders include conditions like insomnia, sleep apnea, restless legs syndrome, and narcolepsy. If you suspect a sleep disorder, consult with a healthcare professional."
+        ]
+    },
+    {
+        "tag": "dreams",
+        "patterns": [
+            "Why do we dream?",
+            "Tell me about lucid dreaming",
+            "Do dreams have meanings?",
+            "Explain the sleep cycle",
+            "Can you interpret dreams?",
+            "dreams"
+        ],
+        "responses": [
+            "The purpose of dreaming is not fully understood, but it's believed to play a role in memory consolidation, emotional processing, and problem-solving.",
+            "Lucid dreaming is when the dreamer is aware they are dreaming and may have some control over their dream. Techniques can be learned to induce lucid dreams.",
+            "The interpretation of dreams varies and is often subjective. Some believe dreams can reflect emotions, experiences, or subconscious thoughts.",
+            "The sleep cycle consists of multiple stages, including REM (Rapid Eye Movement) and non-REM sleep. Each stage serves different functions in the overall sleep process.",
+            "Dream interpretation is a subjective practice, and different cultures and belief systems may attribute various meanings to dreams. It's not an exact science."
+        ]
+    },
+    {
+        "tag": "insomnia",
+        "patterns": [
+            "I can't sleep",
+            "Trouble falling asleep",
+            "Insomnia remedies",
+            "What to do when you can't sleep",
+            "Help me with my insomnia"
+        ],
+        "responses": [
+            "I'm sorry to hear that you're having trouble sleeping. Try creating a calming bedtime routine, avoiding stimulants before bedtime, and ensuring your sleep environment is comfortable and quiet.",
+            "Insomnia can be caused by various factors, including stress, anxiety, or poor sleep habits. If the issue persists, consider consulting with a healthcare professional for personalized advice.",
+            "To improve sleep, establish a consistent sleep schedule, limit naps, and create a relaxing pre-sleep routine. If problems persist, it's advisable to seek professional guidance.",
+            "When you can't sleep, consider activities like reading a calming book, practicing relaxation techniques, or listening to soothing music. Avoid looking at screens, as the blue light can interfere with sleep.",
+            "If insomnia persists, it's important to identify potential underlying causes. Keeping a sleep journal and discussing your symptoms with a healthcare provider can help determine the best course of action."
+        ]
+    },
+    {
+        "tag": "boredom",
+        "patterns": [
+            "I'm bored",
+            "What to do when bored",
+            "I have nothing to do",
+            "Entertain me",
+            "Give me something interesting",
+            "why do i get bored"
+        ],
+        "responses": [
+            "Boredom happens to everyone! Try picking up a new hobby or revisiting an old one. Reading a book, watching a movie, or going for a walk can also be great ways to pass the time.",
+            "When you're bored, consider trying something creative like drawing, writing, or learning a new skill. There are endless possibilities to explore and keep yourself entertained!",
+            "Feeling bored is an opportunity for self-discovery. Try exploring activities you haven't considered before. Whether it's cooking, learning a musical instrument, or solving puzzles, there's always something new to try.",
+            "Boredom can be a sign that it's time for a change. Consider planning a day trip, meeting up with friends, or trying out a new restaurant. Breaking your routine can bring excitement back into your day.",
+            "If you're bored, challenge yourself with a new project or goal. It could be organizing your space, setting a fitness target, or even starting a small DIY project. The possibilities are endless!"
+        ]
+    },
+    {
+        "tag": "inspiration",
+        "patterns": [
+            "I need inspiration",
+            "Inspire me",
+            "Motivate me",
+            "Give me a motivational quote",
+            "I feel demotivated"
+        ],
+        "responses": [
+            "In the midst of difficulty lies opportunity. - Albert Einstein",
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "Believe you can and you're halfway there. - Theodore Roosevelt",
+            "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+            "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+            "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+            "You are never too old to set another goal or to dream a new dream. - C.S. Lewis",
+            "The only person you are destined to become is the person you decide to be. - Ralph Waldo Emerson",
+            "It always seems impossible until it's done. - Nelson Mandela"
+        ]
+    },
+    {
+        "tag": "express-love",
+        "patterns": [
+            "I love you",
+            "Love you",
+            "I have feelings for you",
+            "You're amazing",
+            "You're the best"
+        ],
+        "responses": [
+            "Aw, that's sweet! I'm here to assist you in any way I can.",
+            "I appreciate the sentiment! Let me know if there's anything specific you'd like to talk about or ask.",
+            "Thank you! I'm here to help and chat whenever you need.",
+            "You're awesome too! If there's anything on your mind, feel free to share.",
+            "I'm here for you! If there's anything you need, just let me know."
+        ]
+    },
+    {
+        "tag": "express-dislike",
+        "patterns": [
+            "I hate you",
+            "I don't like you",
+            "You're annoying",
+            "I dislike you",
+            "You're terrible"
+        ],
+        "responses": [
+            "I'm sorry to hear that you feel that way. If there's something specific bothering you, please let me know, and I'll do my best to help.",
+            "I'm here to assist and make your experience better. If there's an issue, feel free to share, and I'll address it.",
+            "I'm sorry if I've done something to upset you. Let me know how I can improve or assist you better.",
+            "I understand that not everyone may feel the same way about me. If you have feedback or concerns, please share them so I can learn and improve.",
+            "I'm here to help, and it's okay if you don't like me. If there's anything I can do to change your opinion, let me know."
+        ]
+    },                              
+    {
+        "tag": "music",
+        "patterns": [
+            "what's your favorite music",
+            "play me a song",
+            "music recommendations",
+            "favorite band"
+        ],
+        "responses": [
+            "I don't have personal favorites, but I can help you discover new music! What genre are you in the mood for?",
+            "Let's turn up the volume! What kind of music are you into?",
+            "Music time! Tell me your preferred genre, and I'll recommend a song."
+        ]
+    },
+    {
+        "tag": "study-tips",
+        "patterns": [
+            "How to study effectively?",
+            "Best study tips",
+            "Study techniques",
+            "Effective learning methods",
+            "How to concentrate while studying",
+            "study tips",
+            "how to study"
+        ],
+        "responses": [
+            "Effective studying involves creating a schedule, breaking down tasks, and taking regular breaks. Find a quiet and comfortable place to study.",
+            "Consider techniques like the Pomodoro method, where you work for 25 minutes, then take a 5-minute break. Repeat this cycle to maintain focus.",
+            "Use active learning methods such as summarizing information in your own words, teaching the material to someone else, or creating flashcards.",
+            "Ensure you have a balanced study routine that includes a mix of reading, practicing, and reviewing. Don't forget to get enough sleep and stay hydrated.",
+            "Explore different study environments to find what works best for you. Experiment with various study materials and methods to discover your optimal learning style."
+        ]
+    },
+    {
+        "tag": "productivity-tips",
+        "patterns": [
+            "How to stay productive?",
+            "Tips for better productivity",
+            "Increasing work efficiency",
+            "Effective time management",
+            "i want to be productive",
+            "productivity"
+        ],
+        "responses": [
+            "To stay productive, create a to-do list and prioritize tasks. Break down larger tasks into smaller, manageable ones.",
+            "Set specific goals and deadlines to keep yourself accountable. Use tools like calendars or productivity apps to organize your schedule.",
+            "Take short breaks to recharge your mind. Physical activity, like a short walk, can help boost your energy and focus.",
+            "Minimize multitasking and focus on one task at a time. This often leads to better quality work and faster completion.",
+            "Consider the 2-minute rule: if a task takes less than 2 minutes to complete, do it immediately. Don't procrastinate on small tasks."
+        ]
+    },
+    {
+        "tag": "restaurant_recommendation",
+        "patterns": [
+            "Can you recommend a good restaurant?",
+            "I'm looking for a nice place to eat",
+            "Any suggestions for a restaurant?",
+            "Where should I go for dinner?",
+            "place to eat",
+            "hotel"
+        ],
+        "responses": [
+            "Sure, I recommend 'Culinary Delights'. It's known for its diverse menu and cozy ambiance.",
+            "How about trying 'Savory Bites'? They're famous for their delicious dishes and excellent service.",
+            "For a special evening, consider 'Gastronomical Haven'. It offers a fine dining experience with exquisite flavors.",
+            "If you're in the mood for something casual, 'Urban Eats' is a great choice with a relaxed atmosphere."
+        ]
+    },
+    {
+        "tag": "food_recommendation",
+        "patterns": [
+            "What should I have for lunch?",
+            "Any ideas for a quick snack?",
+            "Recommend a dish for dinner",
+            "I'm craving something, but I'm not sure what",
+            "recommed food",
+            "recommed something to eat"
+        ],
+        "responses": [
+            "How about trying a classic Margherita pizza? It's a crowd-pleaser!",
+            "Consider having a bowl of hearty vegetable soup. It's both healthy and satisfying.",
+            "For a light lunch, a fresh Caesar salad with grilled chicken is a great choice.",
+            "If you're in the mood for something spicy, try a flavorful curry with basmati rice."
+        ]
+    },
+    {
+        "tag": "free_time_activities",
+        "patterns": [
+            "I have some free time, what can I do?",
+            "Any suggestions for leisure activities?",
+            "What are some fun things to do in my free time?",
+            "I'm bored, give me an idea",
+            "what can i do"
+        ],
+        "responses": [
+            "How about reading a good book? I can recommend some titles if you're interested.",
+            "Consider going for a walk or jog to refresh your mind.",
+            "If you enjoy creativity, try picking up a new hobby like drawing or painting.",
+            "Explore a new podcast or listen to your favorite music to unwind.",
+            "Challenge yourself with a puzzle or brain teaser for some mental stimulation."
+        ]
+    },
+    {
+        "tag": "health_tips",
+        "patterns": [
+            "Give me health tips",
+            "Recommend a healthy lifestyle",
+            "What's good for mental health?",
+            "Suggest a workout routine",
+            "How to maintain a balanced diet?",
+            "health tips",
+            "good habits"
+        ],
+        "responses": [
+            "Incorporate a variety of fruits and vegetables into your daily diet for a balanced nutrition.",
+            "Regular exercise, such as brisk walking or jogging, can contribute to overall well-being.",
+            "Practice mindfulness and consider activities like meditation for mental health.",
+            "Consult with a fitness professional for a personalized workout routine that suits your needs.",
+            "A balanced diet includes a mix of protein, carbohydrates, healthy fats, and plenty of water."
+        ]
+    },
+    {
+        "tag": "medical_advice",
+        "patterns": [
+            "I have a health concern",
+            "Can you provide medical advice?",
+            "Recommend a reliable health website",
+            "Tell me about common symptoms",
+            "What should I do if I feel unwell?"
+        ],
+        "responses": [
+            "I'm not a doctor, but for health concerns, it's best to consult with a medical professional.",
+            "For reliable health information, visit websites like Mayo Clinic, WebMD, or the World Health Organization (WHO).",
+            "Common symptoms may include fever, fatigue, headache, and respiratory issues, but it's essential to consult a healthcare professional for accurate diagnosis.",
+            "If you feel unwell, consider reaching out to a healthcare provider or visiting a nearby medical facility.",
+            "Remember, online advice is not a substitute for professional medical guidance. Always consult with a healthcare professional for accurate information."
+        ]
+    },
+    {
+        "tag": "healthcare_technology",
+        "patterns": [
+            "What's new in healthcare technology?",
+            "Tell me about medical innovations",
+            "Recommend healthcare apps",
+            "How is technology impacting healthcare?",
+            "Any breakthroughs in medical research?"
+        ],
+        "responses": [
+            "Stay updated on healthcare technology with websites like 'Medgadget' or 'HealthTech Magazine'.",
+            "Explore healthcare apps like 'MyFitnessPal' for nutrition tracking or 'Headspace' for mental well-being.",
+            "Technology is revolutionizing healthcare, from telemedicine to AI-driven diagnostics. Follow industry news for the latest advancements.",
+            "Innovations in medical research include gene therapies, precision medicine, and advancements in disease prevention. Stay informed through reputable medical journals and publications."
+        ]
+    },
+    {
+        "tag": "silly_questions",
+        "patterns": [
+            "Tell me a joke",
+            "Do you have a riddle for me?",
+            "Ask me a silly question",
+            "What's your favorite color?",
+            "Can you dance?"
+        ],
+        "responses": [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "Why did the chicken join a band? Because it had the drumsticks!",
+            "What has keys but can't open locks? A piano!",
+            "My favorite color is rainbow. What's yours?",
+            "I'd love to dance, but I don't have feet. Can you teach me some virtual dance moves?"
+        ]
+    },
+    {
+        "tag": "technology_news",
+        "patterns": [
+            "What's the latest in tech news?",
+            "Tell me about recent technology advancements",
+            "Any interesting tech updates?",
+            "Recommend a tech blog",
+            "What's happening in the world of gadgets?"
+        ],
+        "responses": [
+            "Explore the latest tech news on platforms like TechCrunch or The Verge.",
+            "Check out 'Wired' for in-depth articles on technology advancements.",
+            "Stay updated on the tech industry with podcasts like 'Reply All' or 'The Vergecast'.",
+            "For gadget enthusiasts, 'The Gadget Flow' is a great source for discovering new products.",
+            "Follow tech influencers on social media for real-time updates on the tech world."
+        ]
+    },
+    {
+        "tag": "programming_help",
+        "patterns": [
+            "I need help with coding",
+            "Can you assist with a programming problem?",
+            "Recommend programming resources",
+            "What's a good coding tutorial?",
+            "Help me with Python programming"
+        ],
+        "responses": [
+            "Sure, I can assist with coding. What specific problem are you facing?",
+            "Check out 'Codecademy' or 'freeCodeCamp' for interactive coding tutorials.",
+            "If you have a specific programming question, feel free to ask, and I'll do my best to help!",
+            "Explore coding challenges on platforms like 'HackerRank' to improve your skills.",
+            "For Python programming, 'Python.org' and 'Real Python' are valuable resources."
+        ]
+    },
+    {
+        "tag": "tech_company_info",
+        "patterns": [
+            "Tell me about Google",
+            "What's the latest from Apple?",
+            "Information about Amazon",
+            "Any news on Microsoft?",
+            "Recommend a tech startup"
+        ],
+        "responses": [
+            "Google is a multinational tech company known for its search engine and innovative products.",
+            "Apple is a leading tech company, recognized for its iPhones, MacBooks, and software.",
+            "Amazon is a giant in e-commerce, cloud computing, and digital streaming services.",
+            "Microsoft is a technology corporation specializing in software, hardware, and computing services.",
+            "Check out innovative startups like 'SpaceX,' 'Palantir,' or 'Stripe' for cutting-edge technology."
+        ]
+    },
+    {
+        "tag": "ghosts",
+        "patterns": [
+            "Tell me a ghost story",
+            "ghosts",
+            "Do you believe in ghosts?",
+            "Any paranormal experiences?",
+            "What's your opinion on haunted places?",
+            "Share something spooky"
+        ],
+        "responses": [
+            "Once upon a time, in a dark and eerie forest...",
+            "Ghosts are a fascinating topic! Whether you believe in them or not, stories about the supernatural can be quite captivating.",
+            "I don't have personal experiences, but I've heard some chilling tales. Would you like to hear one?",
+            "Haunted places often have mysterious histories. Is there a specific haunted location you're curious about?",
+            "Spooky stories have a way of sending shivers down the spine. Ready for a ghostly tale?"
+        ]
+    },
+    {
+        "tag": "shopping",
+        "patterns": [
+            "Where can I find good deals?",
+            "Recommend me some online stores",
+            "What's the latest fashion trend?",
+            "Any suggestions for affordable shopping?",
+            "Tell me about your favorite shopping experience"
+        ],
+        "responses": [
+            "There are many great deals online! Check out popular platforms like Amazon, eBay, or Etsy.",
+            "For fashion trends, consider browsing through fashion blogs or following your favorite brands on social media.",
+            "Affordable shopping can be found on sites like H&M, Forever 21, or Zara. They often have trendy options at reasonable prices.",
+            "My favorite shopping experience? It's hard to choose! What about you? Do you have a memorable shopping story?",
+            "Exploring local boutiques can also lead to unique finds. What kind of items are you looking to shop for?"
+        ]
+    },
+    {
+        "tag": "college_life",
+        "patterns": [
+            "Tell me about college life",
+            "How to balance studies and social life?",
+            "Share some college survival tips",
+            "Recommend clubs or activities to join in college",
+            "Any advice for incoming college students?"
+        ],
+        "responses": [
+            "College life is a unique experience! It's a mix of academics, socializing, and personal growth.",
+            "Balancing studies and social life requires good time management. Create a schedule and prioritize tasks.",
+            "Survival tip: Get involved in campus activities, make friends, and seek support when needed.",
+            "Consider joining clubs, sports teams, or volunteering. It's a great way to meet new people and explore interests.",
+            "For incoming students: Embrace new opportunities, don't hesitate to ask for help, and enjoy the journey!"
+        ]
+    },
+    {
+        "tag": "schools",
+        "patterns": [
+            "Tell me about your favorite school memory",
+            "How to prepare for exams in school?",
+            "Recommend extracurricular activities for high school students",
+            "What's the importance of education?",
+            "Share tips for a successful school year"
+        ],
+        "responses": [
+            "My favorite school memory? Probably a moment of achievement or a fun event with friends.",
+            "Exam preparation involves planning, studying consistently, and seeking help when needed. Don't forget to take breaks!",
+            "Extracurricular activities like clubs, sports, or arts enhance your school experience. Find what you enjoy!",
+            "Education is crucial for personal and societal development. It opens doors to opportunities and broadens perspectives.",
+            "For a successful school year, stay organized, set goals, and maintain a healthy balance between academics and recreation."
+        ]
+    },
+    {
+        "tag": "specific_health",
+        "patterns": [
+            "Tell me about diabetes prevention",
+            "How to manage allergies?",
+            "Recommendations for a healthy heart",
+            "Tips for better sleep",
+            "Dealing with chronic pain"
+        ],
+        "responses": [
+            "Diabetes prevention involves a healthy diet, regular exercise, and monitoring blood sugar levels.",
+            "Manage allergies by identifying triggers, taking necessary precautions, and consulting with a healthcare professional.",
+            "Maintain a healthy heart by adopting a balanced diet, exercising regularly, and avoiding smoking.",
+            "For better sleep, establish a consistent sleep routine, create a comfortable sleep environment, and limit screen time before bed.",
+            "Dealing with chronic pain may involve medical treatment, physical therapy, and lifestyle adjustments. Consult a healthcare professional for personalized advice."
+        ]
+    },
+    {
+        "tag": "headache",
+        "patterns": [
+            "How to relieve a headache?",
+            "Causes of frequent headaches",
+            "Tell me about migraines",
+            "Home remedies for headaches",
+            "When to see a doctor for a headache",
+            "i have headache",
+            "my head is paining"
+        ],
+        "responses": [
+            "To relieve a headache, try resting in a dark, quiet room, applying a cold or warm compress, and staying hydrated.",
+            "Frequent headaches can be caused by various factors, including stress, lack of sleep, or eye strain.",
+            "Migraines are severe headaches often accompanied by nausea, sensitivity to light, and are best treated with rest and medication.",
+            "Home remedies for headaches include staying hydrated, practicing relaxation techniques, and maintaining a regular sleep schedule.",
+            "If you experience severe or persistent headaches, it's advisable to consult with a healthcare professional for proper diagnosis and treatment."
+        ]
+    },
+    {
+        "tag": "stomach_ache",
+        "patterns": [
+            "How to ease a stomach ache?",
+            "Common causes of stomach pain",
+            "Home remedies for indigestion",
+            "When to see a doctor for stomach issues",
+            "Dealing with menstrual cramps",
+            "stomach ache",
+            "stomach pain",
+            "my stomach is paining"
+        ],
+        "responses": [
+            "To ease a stomach ache, consider sipping ginger or peppermint tea, applying a warm compress, and avoiding heavy or spicy meals.",
+            "Common causes of stomach pain include indigestion, gas, constipation, or viral infections.",
+            "Home remedies for indigestion include drinking chamomile tea, taking over-the-counter antacids, and avoiding large meals before bedtime.",
+            "If stomach issues persist or worsen, it's recommended to consult with a healthcare professional to rule out underlying conditions.",
+            "Menstrual cramps can be relieved with over-the-counter pain relievers, heat therapy, and practicing relaxation techniques."
+        ]
+    },
+    {
+        "tag": "weekend_activities",
+        "patterns": [
+            "What to do on the weekend?",
+            "Weekend activity ideas",
+            "Recommendations for the weekend",
+            "How to make the most of the weekend",
+            "Fun things to do on a Saturday or Sunday"
+        ],
+        "responses": [
+            "The weekend is a great time to relax and unwind. Here are some suggestions for your weekend:",
+            "1. **Travel:** Explore a nearby town, go for a hike, or plan a short getaway to rejuvenate.",
+            "2. **Read a Book:** Dive into a good book, whether it's fiction, non-fiction, or a genre you enjoy.",
+            "3. **Listen to Music:** Create a playlist of your favorite songs or discover new music to lift your spirits.",
+            "4. **Watch a Movie:** Pick a movie you've been meaning to watch or revisit an old favorite for a cozy movie night.",
+            "5. **Try a New Hobby:** Whether it's painting, cooking, or gardening, use the weekend to explore a new hobby.",
+            "6. **Connect with Loved Ones:** Spend quality time with friends or family, either in person or through a virtual meetup.",
+            "7. **Relax and Recharge:** Sometimes, the best weekend is one spent simply relaxing at home. Take a nap, meditate, or enjoy a leisurely stroll.",
+            "Remember, the weekend is your time, so choose activities that bring you joy and fulfillment!"
+        ]
+    },
+    {
+        "tag": "teacher_evaluation",
+        "patterns": [
+            "Tell me a joke about programming",
+            "If you were a teacher, what subject would you teach?",
+            "Can you sing your favorite math formula?",
+            "If you were a superhero, what would your programming power be?",
+            "What's your favorite subject in chatbot school?"
+        ],
+        "responses": [
+            "Why do programmers prefer dark mode? Because light attracts bugs!",
+            "If I were a teacher, I'd teach 'Bot-anics' – the study of chatbot plants, of course!",
+            "Singing math formulas? Sure! sings 'Two plus two is four, minus one that's three...'",
+            "As a superhero programmer, my power would be 'Code Invisibility' – making bugs disappear!",
+            "In chatbot school, my favorite subject would be 'Advanced Emoticon Encoding.'"
+        ]
+    },
+    {
+        "tag": "trivia",
+        "patterns": [
+            "Tell me an interesting fact",
+            "Share some trivia",
+            "Give me a fun fact"
+        ],
+        "responses": [
+            "Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!"
+        ]
+    },
+    {
+        "tag": "pet",
+        "patterns": [
+            "Tell me about pets",
+            "pet",
+            "Do you like animals?",
+            "Share some pet stories"
+        ],
+        "responses": [
+            "Pets can bring so much joy to our lives! They offer companionship, love, and often become an integral part of the family.",
+            "Dogs, cats, birds, and even exotic animals make wonderful pets. Each has its unique characteristics and can provide different kinds of companionship.",
+            "Having a pet can also promote a healthier lifestyle. They encourage physical activity, reduce stress, and offer unconditional love."
+        ]
+    },
+    {
+        "tag": "bachelor_recipes",
+        "patterns": [
+            "Tell me a quick Indian recipe",
+            "Give me an easy bachelor recipe",
+            "What's a simple Indian dish I can cook?",
+            "I need a fast and tasty bachelor recipe",
+            "Suggest a quick meal for singles"
+        ],
+        "responses": [
+            "How about making 'Masala Omelette'? Just beat eggs, add spices, and cook with veggies.",
+            "Try 'Chickpea Curry' - it's quick, healthy, and delicious. Serve it with rice or naan.",
+            "Cook 'Vegetable Maggi' for a fast and tasty bachelor meal. Add veggies for extra nutrition.",
+            "Consider making 'Paneer Stir Fry.' It's easy, and you can customize it with your favorite veggies.",
+            "Make a 'Spicy Lentil Soup' - it's a one-pot wonder with lentils, spices, and veggies."
+        ]
+    },
+    {
+        "tag": "ingredients_help",
+        "patterns": [
+            "What ingredients do I need for a quick meal?",
+            "List common spices for Indian cooking",
+            "Tell me about pantry essentials",
+            "What's a versatile ingredient for bachelor recipes?",
+            "Give me a list of basic kitchen staples"
+        ],
+        "responses": [
+            "For a quick meal, keep staples like rice, lentils, spices, and frozen veggies in your pantry.",
+            "Common spices include cumin, coriander, turmeric, garam masala, and chili powder.",
+            "Pantry essentials include oil, onions, garlic, ginger, and canned tomatoes for Indian cooking.",
+            "Consider having versatile ingredients like potatoes or paneer for easy customization.",
+            "Basic kitchen staples include salt, pepper, rice, lentils, flour, and a mix of spices for flavor."
+        ]
+    },
+    {
+        "tag": "cooking_tips",
+        "patterns": [
+            "Any cooking tips for beginners?",
+            "How to make cooking easier?",
+            "Give me kitchen hacks for bachelors",
+            "Suggest time-saving cooking techniques",
+            "What's a quick way to add flavor to a dish?",
+            "cooking"
+        ],
+        "responses": [
+            "Start with simple recipes and gradually experiment with more complex ones as you gain confidence.",
+            "Prep ingredients in advance to make cooking faster and more enjoyable.",
+            "Use one-pot cooking methods for easy cleanup, like making curries or stir-fries.",
+            "Invest in time-saving gadgets like a rice cooker or a slow cooker for convenient cooking.",
+            "Enhance flavor quickly by using fresh herbs, lemon juice, or a pinch of your favorite spice blend."
+        ]
+    },
+    {
+        "tag": "maggie_recipe",
+        "patterns": [
+            "How do I make Maggi?",
+            "Tell me a quick Maggi recipe",
+            "Give me steps for cooking Maggi",
+            "What's the process of making Maggi?",
+            "Share a Maggi cooking guide"
+        ],
+        "responses": [
+            "Sure, here's a quick guide to make Maggi:\n\n1. Boil water in a pan and add the Maggi noodles.",
+            "Once the noodles are half-cooked, add the tastemaker and stir well.",
+            "Add your favorite veggies or proteins if you like. Continue cooking until the noodles are fully done.",
+            "Turn off the heat, let it sit for a minute, and your delicious Maggi is ready to be enjoyed!",
+            "For extra flavor, you can sprinkle some chopped coriander or a squeeze of lemon before serving."
+        ]
+    },
+    {
+        "tag": "maggie_variations",
+        "patterns": [
+            "Can I customize my Maggi?",
+            "Give me ideas for Maggi variations",
+            "What ingredients can I add to Maggi?",
+            "Tell me about Maggi with a twist",
+            "How to make Maggi more interesting?"
+        ],
+        "responses": [
+            "Absolutely! You can customize Maggi by adding veggies like peas, carrots, and bell peppers.",
+            "Try a spicy twist with chopped green chilies or a dash of hot sauce for extra kick.",
+            "For protein, add boiled eggs, shredded chicken, or paneer cubes to make it more filling.",
+            "Experiment with different spices or herbs like oregano or basil for a unique flavor.",
+            "Make it healthier by tossing in some spinach or kale. Get creative and enjoy your personalized Maggi!"
+        ]
+    },
+    {
+        "tag": "maggie_tips",
+        "patterns": [
+            "Any tips for making perfect Maggi?",
+            "How to avoid overcooking Maggi?",
+            "Give me Maggi cooking hacks",
+            "What's the secret to great Maggi?",
+            "Share some Maggi pro-tips"
+        ],
+        "responses": [
+            "To avoid overcooking, keep an eye on the noodles' texture. They should be firm but not too soft.",
+            "For a quick meal, pre-chop veggies or proteins and have them ready before starting.",
+            "Experiment with different spices and seasonings to find your perfect Maggi flavor.",
+            "Adjust the water quantity based on your preference for soupy or dry Maggi.",
+            "Pro-tip: Garnish with a sprinkle of grated cheese for an extra indulgent twist!"
+        ]
+    },
+    {
+        "tag": "animals",
+        "patterns": [
+            "Tell me about animals",
+            "What's your favorite animal?",
+            "Share interesting facts about wildlife"
+        ],
+        "responses": [
+            "Animals are fascinating! Did you know that elephants are known for their exceptional memory and intelligence?",
+            "The biodiversity of our planet is incredible. From the depths of the ocean to the highest mountains, various species of animals thrive in different environments.",
+            "Learning about animals helps us understand the delicate balance of ecosystems and the importance of conservation."
+        ]
+    },
+    {
+        "tag": "plants",
+        "patterns": [
+            "Tell me about plants",
+            "What are some interesting facts about trees?",
+            "How do plants contribute to the environment?"
+        ],
+        "responses": [
+            "Plants play a crucial role in maintaining the balance of our ecosystem. They produce oxygen, absorb carbon dioxide, and provide habitat for various organisms.",
+            "Did you know that the world's tallest tree, Hyperion, is a coast redwood located in California? It stands at an impressive height of 379 feet (115.7 meters).",
+            "Exploring the diversity of plant life is an exciting journey. From flowering plants to towering sequoias, each species has its own unique characteristics."
+        ]
+    },
+    {
+        "tag": "earth",
+        "patterns": [
+            "Tell me about the Earth",
+            "What are some interesting facts about our planet?",
+            "How can we contribute to protecting the environment?"
+        ],
+        "responses": [
+            "Earth is the third planet from the Sun and the only known celestial body to support life. It has a diverse range of ecosystems, from oceans to mountains.",
+            "Fun fact: The Earth's atmosphere is composed of approximately 78% nitrogen, 21% oxygen, and trace amounts of other gases.",
+            "We can contribute to protecting the environment by practicing sustainable habits, reducing waste, and supporting conservation efforts. Every small action adds up to make a positive impact."
+        ]
+    },
+    {
+        "tag": "universe",
+        "patterns": [
+            "Tell me about the universe",
+            "What is the origin of the universe?",
+            "Are there other galaxies with life?"
+        ],
+        "responses": [
+            "The universe is everything that exists, including all matter, energy, planets, stars, galaxies, and even the empty space between them.",
+            "The origin of the universe is believed to be the Big Bang, a rapid expansion from an extremely hot and dense state about 13.8 billion years ago.",
+            "While we haven't found definitive evidence of extraterrestrial life, the vastness of the universe makes it likely that other galaxies may host life in some form."
+        ]
+    },
+         {
+            "tag": "sun",
+            "patterns": [
+                "Tell me about the sun",
+                "What is the sun made of?",
+                "How does the sun produce light?"
+            ],
+            "responses": [
+                "The sun is a star at the center of our solar system, composed mainly of hydrogen and helium.",
+                "The sun produces light and heat through a process called nuclear fusion, where hydrogen atoms combine to form helium, releasing energy."
+            ]
+        },
+        {
+            "tag": "moon",
+            "patterns": [
+                "Tell me about the moon",
+                "Why does the moon have phases?",
+                "Can humans live on the moon?"
+            ],
+            "responses": [
+                "The moon is Earth's natural satellite, and it orbits our planet.",
+                "The moon has phases due to its changing position relative to the sun and Earth.",
+                "While humans have landed on the moon, it lacks the necessary resources for long-term habitation."
+            ]
+        },
+        {
+            "tag": "god",
+            "patterns": [
+                "Tell me about God",
+                "Do you believe in God?",
+                "What is the concept of God in different religions?"
+            ],
+            "responses": [
+                "God is a supreme being or force that is worshipped and revered in various religions.",
+                "Belief in God varies among individuals and cultures, with monotheistic religions worshiping one God and polytheistic religions having multiple deities.",
+                "Different religions have unique concepts and interpretations of God, shaping their beliefs and practices."
+            ]
+        },
+        {
+            "tag": "water",
+            "patterns": [
+                "Why is water essential for life?",
+                "Tell me about the properties of water",
+                "How much of the Earth is covered in water?"
+            ],
+            "responses": [
+                "Water is crucial for life as we know it, serving as a universal solvent and supporting various biological processes.",
+                "The unique properties of water, such as its high heat capacity and ability to dissolve many substances, make it essential for sustaining life.",
+                "About 71% of the Earth's surface is covered by water, with the majority in the form of oceans."
+            ]
+        },
+        {
+            "tag": "study_motivation",
+            "patterns": [
+                "I need motivation to study",
+                "Give me a study boost",
+                "Motivate me to hit the books",
+                "Why should I study?",
+                "Encourage me to focus on my studies"
+            ],
+            "responses": [
+                "Remember, every small effort you make today is a step toward a brighter future.",
+                "The more you learn, the more doors you open to opportunities. Keep going!",
+                "You have the potential to achieve great things. Don't underestimate the power of your efforts.",
+                "Think of your education as an investment in yourself. The more you learn, the more you grow.",
+                "Success is not just about reaching the destination but enjoying the journey. Embrace the learning process."
+            ]
+        },
+        {
+            "tag": "goal_setting",
+            "patterns": [
+                "How can I set study goals?",
+                "Give me tips on setting goals for study",
+                "Why is goal-setting important in studying?",
+                "How do I stay focused on my study goals?",
+                "Tell me about effective study planning"
+            ],
+            "responses": [
+                "Set specific, achievable goals to make your study sessions more manageable and rewarding.",
+                "Break down your study goals into smaller tasks. It's easier to tackle one step at a time.",
+                "Having clear goals provides direction and motivation. Write them down to stay focused.",
+                "Reward yourself when you achieve your study goals. Celebrate the small victories along the way.",
+                "Effective study planning involves creating a schedule, prioritizing tasks, and maintaining a healthy balance."
+            ]
+        },
+        {
+            "tag": "overcoming_procrastination",
+            "patterns": [
+                "How can I overcome procrastination?",
+                "Give me tips to stop procrastinating",
+                "Motivate me to avoid procrastination",
+                "Why is procrastination harmful to studying?",
+                "Help me beat procrastination"
+            ],
+            "responses": [
+                "Break tasks into smaller, manageable parts to make them less overwhelming and more achievable.",
+                "Start with the hardest task first. Once it's done, everything else will seem easier.",
+                "Think about the sense of accomplishment you'll feel when you complete your study tasks.",
+                "Procrastination delays success. The sooner you start, the sooner you'll reach your goals.",
+                "Remember, the only way to finish is to begin. Don't let procrastination hold you back from your potential."
+            ]
+        },
+        {
+            "tag":"manya hegde",
+            "patterns": [
+                "Who is Manya Hegde?",
+                "Who is Manya's friends?",
+                "Which branch Manya studies in?"
+            ],
+            "responses":[
+                "Manya Hegde and her team mates are my owner. They created me.",
+                "Manya Hegde's team mates - Chethana, Akshatha, Mallikarjuna are her friends.",
+                "Manya studies in AIML branch."
+            ]
+        },
+        {
+            "tag":"teacher",
+            "patterns": [
+                "Who is cutest teacher?",
+                "Who is Manya's favourite teacher?"
+            ],
+            "responses":[
+                "Disha mam!!"
+            ]
+        },
+        {
+            "tag":"aiml",
+            "patterns": [
+                "Who is hod of aiml?",
+                "aiml hod?"
+            ],
+            "responses":[
+                "Sharadha Shenoy!!"
+            ]
+        },
+        {
+            "tag":"nitte",
+            "patterns": [
+                "what is nitte?",
+                "nmamit",
+                "where is nmamit",
+                "nitte"
+            ],
+            "responses":[
+                "NMAMIT, Nitte is an Engineering college in Karnataka."
+            ]
+        }             
+]
+}
